@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: unite-api
-        image: pradeepkundekar0101/unite-api
+        image: pradeepkundekar0101/unite-api:latest
         env:
         - name: DATABASE_URL
           valueFrom:
