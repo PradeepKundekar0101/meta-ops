@@ -16,6 +16,12 @@ spec:
       containers:
       - name: unite-ws
         image: pradeepkundekar0101/unite-ws:f55a5b55df952a31f833a8cc3cb786100d2ffd9e
+        env:
+        - name: DATABASE_URL
+          valueFrom:
+            secretKeyRef:
+              name: cluster-secrets
+              key: DATABASE_URL
         ports:
         - containerPort: 8001
         resources:
