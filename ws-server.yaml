@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: unite-ws
-        image: pradeepkundekar0101/unite-ws
+        image: pradeepkundekar0101/unite-ws:latest
         ports:
         - containerPort: 8001
         resources:
