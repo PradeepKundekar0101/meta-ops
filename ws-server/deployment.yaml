@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: unite-ws
+  namespace: prod
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: unite-ws
+  template:
+    metadata:
+      labels:
+        app: unite-ws
+    spec:
+      containers:
+      - name: unite-ws
+        image: pradeepkundekar0101/unite-ws
+        ports:
+        - containerPort: 8001
+        resources:
+          requests:
+            cpu: "250m"
+            memory: "256Mi"
+          limits:
+            cpu: "500m"
+            memory: "512Mi"
+
+

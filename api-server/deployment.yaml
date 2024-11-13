@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: unite-api
+  namespace: prod
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: unite-api
+  template:
+    metadata:
+      labels:
+        app: unite-api
+    spec:
+      containers:
+      - name: unite-api
+        image: pradeepkundekar0101/unite-api
+        env:
+        - name: DATABASE_URL
+          valueFrom:
+            secretKeyRef:
+              name: cluster-secrets
+              key: DATABASE_URL
+        - name: JWT_SECRET
+          valueFrom:
+            secretKeyRef:
+              name: cluster-secrets
+              key: JWT_SECRET
+        ports:
+        - containerPort: 8000
+        resources:
+          requests:
+            cpu: "250m"
+            memory: "256Mi"
+          limits:
+            cpu: "500m"
+            memory: "512Mi"
+
+
