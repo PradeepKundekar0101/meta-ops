@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: unite-ws
-        image: pradeepkundekar0101/unite-ws:e5e435deaad942e0fd78faf8a761cf25eec948e5
+        image: pradeepkundekar0101/unite-ws:f45107120b9ec23e6f197e23b400d56ad77a5571
         env:
         - name: DATABASE_URL
           valueFrom:
